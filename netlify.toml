@@ -1,0 +1,44 @@
+# Netlify config for the AICS static site.
+# There is no build step: the repo root IS the site.
+
+[build]
+  publish = "."
+  command = ""
+
+# Clean URLs (/services/window-cleaning/ instead of .../index.html)
+[build.processing]
+  skip_processing = false
+
+# Long-cache the fingerprint-free static assets, but let HTML revalidate so
+# content edits go live immediately.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Sensible security headers for a brochure site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Force the canonical host + https so link equity lands on one URL.
+# Uncomment and set the real domain once DNS is pointed.
+# [[redirects]]
+#   from = "https://allimprovementcleaning.com/*"
+#   to = "https://www.allimprovementcleaning.com/:splat"
+#   status = 301
+#   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

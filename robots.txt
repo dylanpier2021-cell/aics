@@ -1,0 +1,9 @@
+# robots.txt for All Improvement Cleaning Services LLC
+# Everything is open to search engines except the post-submit confirmation page.
+
+User-agent: *
+Allow: /
+Disallow: /contact/thank-you/
+
+# Sitemap (update the domain if the live site uses a different one)
+Sitemap: https://www.allimprovementcleaning.com/sitemap.xml

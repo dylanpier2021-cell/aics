@@ -1,0 +1,12 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="All Improvement Cleaning Services logo">
+  <rect width="48" height="48" rx="12" fill="url(#aics-g)"/>
+  <path d="M24 11c4.2 5.1 7.2 9 7.2 13.1A7.2 7.2 0 0 1 24 31.3a7.2 7.2 0 0 1-7.2-7.2C16.8 20 19.8 16.1 24 11Z" fill="#fff"/>
+  <path d="M24 20.2a4 4 0 0 0-4 4" stroke="#12b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M33.5 33.2l1.1 2.6 2.6 1.1-2.6 1.1-1.1 2.6-1.1-2.6L29.8 37l2.6-1.1 1.1-2.6Z" fill="#6ee7b7"/>
+  <defs>
+    <linearGradient id="aics-g" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0e5aa7"/>
+      <stop offset="1" stop-color="#062c56"/>
+    </linearGradient>
+  </defs>
+</svg>

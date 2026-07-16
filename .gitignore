@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Logs / env
+*.log
+.env
+.env.*
+!.env.example
+
+# Local build / host artifacts (this site has no build step)
+.netlify/
+.vercel/
+node_modules/
