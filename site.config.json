@@ -1,0 +1,54 @@
+{
+  "_readme": "SINGLE SOURCE OF TRUTH for values that repeat across the site (base URL, hours, phone, NAP, service area, legal name). Edit here, then run: python3 tools/sync.py . Never hand-edit the generated regions marked with <!-- @shared:... --> in the HTML; sync.py overwrites them.",
+
+  "baseUrl": "https://www.allimprovementcleaning.com",
+  "_baseUrl_TODO": "Placeholder domain, not owned yet. Set the real domain here and run tools/sync.py to update every canonical, og:url, og:image and JSON-LD across the site.",
+
+  "legalName": "All Improvement Cleaning Services LLC",
+  "dba": "AICS",
+  "brand": "All Improvement Cleaning Services",
+  "founder": "Israel Sanchez",
+  "tagline": "We handle the cleaning so you can focus on the workspace.",
+
+  "email": "aics2000@gmail.com",
+
+  "phone": "",
+  "phoneE164": "",
+  "_phone_TODO": "SITE_PHONE. No business number provided yet, so every phone slot is intentionally omitted sitewide. Fill in phone (display, e.g. '(217) 555-0123') and phoneE164 (e.g. '+12175550123'), then run tools/sync.py. It will add the click-to-call links in the footer, the contact page, all six service sidebars, and the LocalBusiness schema telephone in one pass.",
+
+  "address": {
+    "street": "301 Plum Tree",
+    "city": "Urbana",
+    "region": "IL",
+    "zip": "61802",
+    "country": "US"
+  },
+  "geo": { "lat": 40.1106, "lng": -88.2073 },
+
+  "hours": {
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:00",
+    "closes": "19:00",
+    "displayLong": "Mon&ndash;Sat: 8:00am &ndash; 7:00pm",
+    "displayShort": "Mon&ndash;Sat, 8am&ndash;7pm",
+    "closedNote": "Sunday: Closed"
+  },
+
+  "serviceArea": {
+    "radiusMiles": 50,
+    "radiusMeters": 80467,
+    "hub": "Urbana, IL",
+    "towns": ["Urbana", "Champaign", "Savoy", "Mahomet", "St. Joseph", "Rantoul"],
+    "primaryTowns": ["Urbana", "Champaign", "Rantoul"],
+    "phrase": "Urbana, Champaign, Rantoul and surrounding areas within 50 miles",
+    "chipsSuffix": "and surrounding areas within 50 miles"
+  },
+
+  "legalPages": {
+    "privacy": "/privacy-policy/",
+    "terms": "/terms-and-conditions/"
+  },
+
+  "currency": "USD",
+  "priceRange": "$$"
+}
