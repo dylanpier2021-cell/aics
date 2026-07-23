@@ -6,4 +6,4 @@ Allow: /
 Disallow: /contact/thank-you/
 
 # Sitemap (update the domain if the live site uses a different one)
-Sitemap: https://www.allimprovementcleaning.com/sitemap.xml
+Sitemap: https://www.aicscleaning.com/sitemap.xml

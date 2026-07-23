@@ -112,13 +112,14 @@ def gen_footer():
           <div class="footer__contact">
             <a href="mailto:{CFG['email']}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> {CFG['email']}</a>{phone_html}
             <address><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg> <span>{A['street']}<br>{A['city']}, {A['region']} {A['zip']}</span></address>
-            <div style="display:flex;gap:11px;align-items:flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:18px;height:18px;color:#6ee7b7;flex:none;margin-top:3px;"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg> <span>{H['displayLong']}<br>{H['closedNote']}</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:18px;height:18px;color:var(--gold);flex:none;margin-top:3px;"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg> <span>{H['displayLong']}<br>{H['closedNote']}</span></div>
+            <a href="{CFG['googleReview']}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg> Review us on Google</a>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
         <p>&copy; <span data-year>2026</span> {CFG['legalName']} (DBA {CFG['dba']}) &middot; {A['street']}, {A['city']}, {A['region']} {A['zip']}. All rights reserved.</p>
-        <p><a href="{CFG['legalPages']['privacy']}">Privacy Policy</a> &middot; <a href="{CFG['legalPages']['terms']}">Terms &amp; Conditions</a></p>
+        <p><a href="{CFG['legalPages']['privacy']}">Privacy Policy</a> &middot; <a href="{CFG['legalPages']['terms']}">Terms &amp; Conditions</a> &middot; <a href="{CFG['googleReview']}" target="_blank" rel="noopener">Review us on Google</a></p>
       </div>
     </div>
   </footer>"""
@@ -170,8 +171,8 @@ def gen_business_schema():
             f"and post-construction cleaning."
         ),
         "slogan": CFG["tagline"],
-        "priceRange": CFG["priceRange"],
         "currenciesAccepted": CFG["currency"],
+        "paymentAccepted": CFG["paymentAccepted"],
         "founder": CFG["founder"],
         "address": {
             "@type": "PostalAddress",
@@ -205,7 +206,7 @@ def gen_business_schema():
     if HAS_PHONE:
         schema["telephone"] = CFG["phoneE164"]
         schema["contactPoint"]["telephone"] = CFG["phoneE164"]
-    # NOTE: paymentAccepted intentionally omitted until Israel confirms methods.
+    # priceRange intentionally omitted: the client quotes every job, no prices shown.
     body = json.dumps(schema, indent=2, ensure_ascii=False)
     return '\n  <script type="application/ld+json">\n' + body + "\n  </script>"
 
@@ -221,7 +222,7 @@ def sync_file(p: Path):
     for host in set(re.findall(r"https?://([A-Za-z0-9.\-]+)/", html)):
         if host in ("schema.org", "www.w3.org", "fonts.googleapis.com",
                     "fonts.gstatic.com", "maps.google.com", "www.google.com",
-                    "images.pexels.com", "search.google.com"):
+                    "images.pexels.com", "search.google.com", "g.page"):
             continue
         if host != BASE.split("//")[1]:
             html = html.replace(f"https://{host}/", f"{BASE}/")

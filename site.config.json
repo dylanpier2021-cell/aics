@@ -1,23 +1,21 @@
 {
-  "_readme": "SINGLE SOURCE OF TRUTH for values that repeat across the site (base URL, hours, phone, NAP, service area, legal name). Edit here, then run: python3 tools/sync.py . Never hand-edit the generated regions marked with <!-- @shared:... --> in the HTML; sync.py overwrites them.",
+  "_readme": "SINGLE SOURCE OF TRUTH for values that repeat across the site (base URL, hours, phone, NAP, service area, legal name, payment, review link). Edit here, then run: python3 tools/sync.py . Never hand-edit the generated regions marked with <!-- @shared:... --> in the HTML; sync.py overwrites them.",
 
-  "baseUrl": "https://www.allimprovementcleaning.com",
-  "_baseUrl_TODO": "Placeholder domain, not owned yet. Set the real domain here and run tools/sync.py to update every canonical, og:url, og:image and JSON-LD across the site.",
+  "baseUrl": "https://www.aicscleaning.com",
 
   "legalName": "All Improvement Cleaning Services LLC",
   "dba": "AICS",
   "brand": "All Improvement Cleaning Services",
-  "founder": "Israel Sanchez",
+  "founder": "Israel Sanchez Hernandez",
   "tagline": "We handle the cleaning so you can focus on the workspace.",
 
-  "email": "aics2000@gmail.com",
+  "email": "aicscu1@gmail.com",
 
-  "phone": "",
-  "phoneE164": "",
-  "_phone_TODO": "SITE_PHONE. No business number provided yet, so every phone slot is intentionally omitted sitewide. Fill in phone (display, e.g. '(217) 555-0123') and phoneE164 (e.g. '+12175550123'), then run tools/sync.py. It will add the click-to-call links in the footer, the contact page, all six service sidebars, and the LocalBusiness schema telephone in one pass.",
+  "phone": "(217) 866-0943",
+  "phoneE164": "+12178660943",
 
   "address": {
-    "street": "301 Plum Tree",
+    "street": "301 Plum Tree Dr",
     "city": "Urbana",
     "region": "IL",
     "zip": "61802",
@@ -49,6 +47,8 @@
     "terms": "/terms-and-conditions/"
   },
 
-  "currency": "USD",
-  "priceRange": "$$"
+  "paymentAccepted": "Zelle, Check",
+  "googleReview": "https://g.page/r/CTvZJ6oLLi3gEAE/review",
+
+  "currency": "USD"
 }

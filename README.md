@@ -140,9 +140,9 @@ Both quote forms (`index.html` hero, `contact/index.html`) are progressive:
 
 - **On Netlify**: `data-netlify="true"` + a hidden `form-name` field means
   submissions are captured with no backend. Check them under *Forms* in the
-  Netlify dashboard, and turn on email notifications to `aics2000@gmail.com`.
+  Netlify dashboard, and turn on email notifications to `aicscu1@gmail.com`.
 - **Anywhere else**: `assets/js/main.js` intercepts the submit and opens a
-  pre-filled email to `aics2000@gmail.com`, so a lead is never silently lost.
+  pre-filled email to `aicscu1@gmail.com`, so a lead is never silently lost.
 - A honeypot field (`company-website`) filters bots.
 
 To use Formspree/Basin instead, change the `action` to their endpoint and drop

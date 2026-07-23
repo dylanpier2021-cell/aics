@@ -1,8 +1,12 @@
 /* All Improvement Cleaning Services: small progressive-enhancement script.
    Everything degrades gracefully: with JS off, the nav links still work, the
-   FAQ <details> still open, and the quote form still submits by email. */
+   FAQ <details> still open, the quote form still submits by email, the stats
+   still show their final numbers and every reveal element is visible. */
 (function () {
   "use strict";
+
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- Mobile nav toggle ------------------------------------------------ */
   var nav = document.querySelector("[data-nav]");
@@ -16,7 +20,7 @@
     // close the menu after tapping a real link (not the Services parent)
     nav.querySelectorAll(".nav__links a").forEach(function (a) {
       a.addEventListener("click", function () {
-        if (window.innerWidth <= 940 && !a.closest(".has-menu > a")) {
+        if (window.innerWidth <= 960 && !a.closest(".has-menu > a")) {
           nav.setAttribute("data-open", "false");
           toggle.setAttribute("aria-expanded", "false");
         }
@@ -24,19 +28,28 @@
     });
   }
 
-  /* ---- Sticky header shadow on scroll ----------------------------------- */
+  /* ---- Sticky header: transparent over the hero, solid on scroll -------- */
+  /* On the homepage the header carries .over-hero and stays transparent until
+     the visitor scrolls past most of the full-screen hero; everywhere else it
+     is solid from the top and just gains a shadow. */
   var header = document.querySelector(".site-header");
   if (header) {
+    var overHero = header.classList.contains("over-hero");
+    var threshold = overHero ? Math.max(120, window.innerHeight * 0.72) : 8;
     var onScroll = function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 8);
+      header.classList.toggle("is-scrolled", window.scrollY > threshold);
     };
+    window.addEventListener("resize", function () {
+      if (overHero) threshold = Math.max(120, window.innerHeight * 0.72);
+      onScroll();
+    }, { passive: true });
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
   /* ---- Reveal-on-scroll -------------------------------------------------- */
   var reveals = document.querySelectorAll(".reveal");
-  if (reveals.length && "IntersectionObserver" in window) {
+  if (reveals.length && "IntersectionObserver" in window && !reduceMotion) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
@@ -47,11 +60,47 @@
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
+  /* ---- Stat count-up ----------------------------------------------------- */
+  /* Each number is <strong data-count="50" data-suffix="%">. The markup ships
+     with the final value so no-JS and reduced-motion users see it immediately;
+     with motion we reset to 0 and ease up to the target when it scrolls in. */
+  var counters = document.querySelectorAll("[data-count]");
+  if (counters.length) {
+    var runCount = function (el) {
+      var target = parseFloat(el.getAttribute("data-count"));
+      var suffix = el.getAttribute("data-suffix") || "";
+      if (isNaN(target)) return;
+      var dur = 1500, start = null;
+      var step = function (ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);           // easeOutCubic
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      };
+      requestAnimationFrame(step);
+    };
+    if ("IntersectionObserver" in window && !reduceMotion) {
+      var co = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.textContent = "0" + (e.target.getAttribute("data-suffix") || "");
+            runCount(e.target);
+            co.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (el) { co.observe(el); });
+    }
+    // else: leave the pre-rendered final values in place
+  }
+
   /* ---- Quote form ------------------------------------------------------- */
   /* The markup carries Netlify Forms attributes, so when this site is hosted
      on Netlify the submission is captured automatically. Everywhere else we
      fall back to opening a pre-filled email to the business. */
-  var EMAIL = "aics2000@gmail.com";
+  var EMAIL = "aicscu1@gmail.com";
   document.querySelectorAll("form[data-quote]").forEach(function (form) {
     var onNetlify = /netlify\.app$/.test(location.hostname) || location.hostname === "";
     form.addEventListener("submit", function (ev) {
