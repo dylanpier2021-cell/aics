@@ -49,7 +49,8 @@ Point any static host at the repo root.
 
 /assets/css/styles.css             All styling (design tokens in :root)
 /assets/js/main.js                 Nav, scroll reveal, form fallback
-/assets/img/                       logo.svg, favicon.svg, og-image.png, photos
+/assets/img/                       brand marks, favicons, og-image.png
+/assets/img/work/                  real AICS job photos (see PHOTO-CREDITS.md)
 site.config.json                   SINGLE SOURCE OF TRUTH (see below)
 tools/sync.py                      Propagates the config into every page
 robots.txt, sitemap.xml, netlify.toml
@@ -71,12 +72,19 @@ robots.txt, sitemap.xml, netlify.toml
    Until then every phone slot renders as a `TODO(SITE_PHONE)` comment, and there is
    deliberately no fake number anywhere.
 
-3. **Swap the placeholder photos.** Three spots use a styled placeholder box
-   (marked with an HTML comment). Drop real photos in `assets/img/` and replace
-   the `.media-frame--ph` div with `<img src="..." alt="...">`:
-   - homepage "Why AICS" section → team at work
-   - homepage service-area section
-   - about page → Israel / the team
+3. **Swap the remaining stock photos.** The gallery, both flagship service pages
+   and the "Why AICS" / About images now use the client's real job photos in
+   `assets/img/work/`. Four spots are still stock because no real photo exists
+   yet, and `assets/img/PHOTO-CREDITS.md` lists exactly which and what to ask
+   for. Two are worth chasing:
+   - **homepage hero** — needs a shot at least 1600px wide; every client photo
+     tops out around 1080px, which is too small for a full-bleed hero
+   - **about page** — a photo of Israel and the crew
+
+   When adding photos, match the tile to the source instead of upscaling:
+   portrait shots belong in `.gallery__item.tall` or `.work-strip--tall`,
+   landscape in the plain tiles. And keep alt text on any stock image
+   descriptive — it must never claim the image is an AICS job.
 
 4. **Replace the sample testimonials.** `index.html` has three clearly-marked
    placeholder reviews. Swap in real, permission-given client quotes.

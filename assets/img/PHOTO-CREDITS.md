@@ -1,33 +1,70 @@
-# Photo credits (temporary placeholders)
+# Image credits and provenance
 
-These are free-license stock photos from Pexels (Pexels License: free for
-commercial use, no attribution required). They are PLACEHOLDERS. Filenames are
-stable, so replacing a file with a real AICS job photo needs no code changes.
+## Brand marks (`assets/img/`) - client-owned
 
-- `assets/img/team-at-work.jpg`: Cleaning crew working in a bright interior. Source: https://www.pexels.com/photo/6197108/
-- `assets/img/about-team.jpg`: Two smiling cleaners in uniform. Source: https://www.pexels.com/photo/9462636/
-- `assets/img/services/commercial.jpg`: Wiping down an office desk. Source: https://www.pexels.com/photo/10567271/
-- `assets/img/services/home.jpg`: Vacuuming a modern living room. Source: https://www.pexels.com/photo/6195949/
-- `assets/img/services/floor-waxing.jpg`: Mopping a hard tile floor. Source: https://www.pexels.com/photo/6196566/
-- `assets/img/services/windows.jpg`: Cleaning a large interior window. Source: https://www.pexels.com/photo/6197122/
-- `assets/img/services/move-out.jpg`: Empty, freshly cleaned room. Source: https://www.pexels.com/photo/16641359/
-- `assets/img/services/construction.jpg`: Vacuum in a room being renovated. Source: https://www.pexels.com/photo/5691510/
+Designed for AICS by Israel's designer, delivered Aug 9 2026 as white + gold art
+on transparency. **They only read on a dark surface**, which every header,
+footer and social card here is. The source PNGs had a wide transparent margin;
+each file below is cropped to the visible art and colour-quantised, so do not
+re-export from the originals without trimming first.
 
-## Cinematic redesign imagery (assets/img/site/) - Pexels placeholders
+- `logo-horizontal.png` - icon + wordmark lockup. Site header.
+- `logo-badge.png` - round badge with the full name. Footer, schema.org `logo`.
+- `logo-icon.png` - icon only. Source art for the favicons below; not referenced
+  by any page directly.
+- `favicon.ico` (16/32/48), `favicon-512.png`, `apple-touch-icon.png` - the icon
+  composited on `#0B0B0D`, because the mark is white and would vanish on the
+  white chrome of a browser tab.
+- `og-image.png` - 1200x630 social card generated from the horizontal logo.
 
-Added for the black/gold redesign. All Pexels License (free commercial use, no
-attribution). PLACEHOLDERS with stable filenames, swap for real AICS photos.
+## Job photos (`assets/img/work/`) - client-owned
+
+Real AICS jobs, supplied by the client Aug 9 2026. No licence or attribution
+needed. Two constraints worth knowing before you reuse them:
+
+1. **They are phone photos.** Widths run 360-1080px. Every placement is sized so
+   the source is *downscaled*, never stretched: portrait shots go in 3:4 tiles,
+   landscape in 4:3. The homepage hero is still stock because nothing in this
+   set is wide enough for a full-bleed 100svh image.
+2. **One photo was withheld.** The original set had 16 shots; the plasma-centre
+   wide shot showing staff and donors' faces is deliberately not in this repo.
+   Do not add it without written consent from the people in it. A low-resolution
+   carpeted meeting room (375px) was also dropped as redundant.
+
+| File | Scene |
+| --- | --- |
+| `medical-clinic-lobby-cleaning.jpg` | Plasma clinic lobby and reception counter |
+| `medical-clinic-floor-cleaning.jpg` | Clinic donation floor, hard floors cleaned |
+| `medical-clinic-treatment-room-cleaning.jpg` | Donation room, equipment and floors |
+| `medical-office-workstation-cleaning.jpg` | Clinic workstations and counters |
+| `clinic-waiting-area-cleaning.jpg` | Clinic waiting area, cleaned after hours |
+| `waxed-hallway-floor-shine.jpg` | Hallway stripped, waxed and buffed (signature shot) |
+| `daycare-hallway-floor-waxing.jpg` | Daycare hallway, freshly waxed |
+| `daycare-playroom-floor-cleaning.jpg` | Daycare playroom floor |
+| `daycare-infant-room-cleaning.jpg` | Infant room, floors and play rug |
+| `school-classroom-cleaning.jpg` | School classroom |
+| `school-classroom-floor-cleaning.jpg` | Classroom floor, stripped and waxed |
+| `school-office-cleaning.jpg` | School office / workroom |
+| `office-cleaning-urbana-il.jpg` | Private office, hardwood floor polished |
+| `commercial-restroom-cleaning.jpg` | Facility restroom |
+
+## Remaining stock placeholders (`assets/img/site/`, `assets/img/services/`)
+
+Pexels License (free commercial use, no attribution). These are the four
+services the client has no photos of yet, plus the hero and two backgrounds.
+Their alt text describes the scene and never claims it is an AICS job - keep it
+that way until a real photo replaces the file.
 
 - `site/hero.jpg`: B&W crew cleaning an interior (homepage hero). Pexels 6195274
-- `site/breaker-1.jpg`: deep-clean of a living room. Pexels 4098778
 - `site/breaker-2.jpg`: storefront at night (homepage image breaker). Pexels 6197086
 - `site/breaker-3.jpg`: B&W squeegee on glass (contact hero). Pexels 6197120
-- `site/gallery-glass.jpg`: gloved squeegee + suds on glass. Pexels 4239146
-- `site/gallery-gold.jpg`: gloved hands on a gold faucet. Pexels 4239130
-- `site/gallery-mirror.jpg`: dusting a round mirror. Pexels 4239031
-- `site/gallery-van.jpg`: work van with equipment. Pexels 6196228
-- `site/gallery-crew.jpg`: crew heading to a job. Pexels 6196680
-- `site/gallery-broom.jpg`: broom + dustpan detail. Pexels 4108714
-- `site/portrait.jpg`: cleaner portrait. Pexels 6197115
+- `services/home.jpg`: vacuuming a modern living room. Pexels 6195949
+- `services/windows.jpg`: cleaning a large interior window. Pexels 6197122
+- `services/move-out.jpg`: empty, freshly cleaned room. Pexels 16641359
+- `services/construction.jpg`: vacuum in a room being renovated. Pexels 5691510
 
-`og-image.png` was regenerated as a black/gold branded social card (not a photo).
+## Still wanted from the client
+
+- A wide, high-resolution hero shot (1600px+) so the homepage can drop stock.
+- A photo of Israel and the crew for `/about/`.
+- Anything for home, window, move-out or post-construction jobs.

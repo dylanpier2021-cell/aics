@@ -78,9 +78,8 @@ def gen_footer():
     <div class="container">
       <div class="footer__grid">
         <div>
-          <a class="footer__brand" href="/">
-            <img src="/assets/img/logo.svg" alt="" width="40" height="40">
-            <span>{CFG['dba']}</span>
+          <a class="footer__brand" href="/" aria-label="{CFG['legalName']} home">
+            <img src="/assets/img/logo-badge.png" alt="{CFG['legalName']}" width="533" height="560">
           </a>
           <p>{CFG['legalName']} (DBA {CFG['dba']}). Locally owned commercial and residential cleaning for {SA['phrase']}.</p>
         </div>
@@ -163,7 +162,7 @@ def gen_business_schema():
         "url": f"{BASE}/",
         "email": CFG["email"],
         "image": f"{BASE}/assets/img/og-image.png",
-        "logo": f"{BASE}/assets/img/logo.svg",
+        "logo": f"{BASE}/assets/img/logo-badge.png",
         "description": (
             f"Locally owned commercial and residential cleaning company serving "
             f"{SA['phrase']}. Services include commercial and office cleaning, home "

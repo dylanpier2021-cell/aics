@@ -15,8 +15,9 @@
   <meta property="og:url" content="https://www.aicscleaning.com/services/floor-cleaning-and-waxing/">
   <meta property="og:image" content="https://www.aicscleaning.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/assets/img/favicon.svg">
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/img/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap">
@@ -84,8 +85,7 @@
     <div class="container">
       <nav class="nav" data-nav aria-label="Primary">
         <a class="brand" href="/" aria-label="All Improvement Cleaning Services home">
-          <img class="brand__logo" src="/assets/img/logo.svg" alt="" width="42" height="42">
-          <span class="brand__name">AICS<small>Cleaning Services</small></span>
+          <img class="brand__logo" src="/assets/img/logo-horizontal.png" alt="All Improvement Cleaning Services LLC" width="900" height="248">
         </a>
         <ul class="nav__links">
           <li><a href="/">Home</a></li>
@@ -120,7 +120,7 @@
 
   <main id="main">
     <section class="subhero subhero--img">
-      <div class="subhero__bg" style="background-image:url('/assets/img/services/floor-waxing.jpg');" role="img" aria-label="Floor stripping and waxing by AICS"></div>
+      <div class="subhero__bg" style="background-image:url('/assets/img/work/daycare-hallway-floor-waxing.jpg');" role="img" aria-label="A freshly waxed hallway floor at a daycare cleaned by AICS"></div>
       <div class="container">
         <div class="subhero__inner">
           <nav class="crumbs" aria-label="Breadcrumb">
@@ -149,13 +149,15 @@
             <p>A well-maintained floor is one of the first things customers notice when they walk in, even if they never think about it consciously. A dull, scuffed floor makes a space feel neglected, while a clean, glossy one signals that a business has its act together. AICS restores and protects VCT, vinyl, tile, linoleum and concrete floors so yours falls firmly in the second camp.</p>
             <p>Regular waxing does more than look good. It puts a sacrificial layer of finish between your floor and everything that gets dragged across it, which extends the life of the floor and keeps a space looking cared for between deep cleans. We handle floor care for offices, retail, medical suites, schools and facilities throughout <strong>Urbana, Champaign, Savoy, Mahomet, St. Joseph and Rantoul</strong>, plus surrounding areas within 50 miles.</p>
 
-            <figure class="svc-photo">
-              <!-- Temporary stock photo. Swap assets/img/services/floor-waxing.jpg for a real
-                   job photo; the filename is stable so no markup change is needed. -->
-              <img src="/assets/img/services/floor-waxing.jpg"
-                   alt="Floor stripping and waxing service in Champaign, IL"
-                   width="1067" height="1600" loading="lazy" decoding="async" class="pos-low">
-            </figure>
+            <!-- Real finished-floor jobs. These are portrait phone shots, so they
+                 run in 3:4 tiles that downscale the source instead of a single
+                 wide frame that would have to stretch one of them. -->
+            <div class="work-strip work-strip--tall">
+              <figure class="gallery__item"><img src="/assets/img/work/waxed-hallway-floor-shine.jpg" alt="Hallway floor stripped, waxed and buffed to a mirror shine by AICS in Urbana, IL" width="480" height="640" loading="lazy" decoding="async"><figcaption class="gallery__cap">Hallway strip &amp; wax</figcaption></figure>
+              <figure class="gallery__item"><img src="/assets/img/work/daycare-playroom-floor-cleaning.jpg" alt="Daycare playroom floor cleaned and finished by AICS" width="539" height="719" loading="lazy" decoding="async"><figcaption class="gallery__cap">Daycare playroom</figcaption></figure>
+              <figure class="gallery__item"><img src="/assets/img/work/school-classroom-floor-cleaning.jpg" alt="School classroom floor stripped and waxed by AICS in Champaign County, IL" width="360" height="480" loading="lazy" decoding="async"><figcaption class="gallery__cap">Classroom floors</figcaption></figure>
+            </div>
+            <p class="work-strip__cap">Finished floors from recent AICS jobs: a school hallway, a daycare playroom and a classroom.</p>
 
             <h3>What a strip and wax includes</h3>
             <p>A full strip and wax is a start-to-finish reset for your floor. Here is what a typical job covers:</p>
@@ -256,9 +258,8 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <a class="footer__brand" href="/">
-            <img src="/assets/img/logo.svg" alt="" width="40" height="40">
-            <span>AICS</span>
+          <a class="footer__brand" href="/" aria-label="All Improvement Cleaning Services LLC home">
+            <img src="/assets/img/logo-badge.png" alt="All Improvement Cleaning Services LLC" width="533" height="560">
           </a>
           <p>All Improvement Cleaning Services LLC (DBA AICS). Locally owned commercial and residential cleaning for Urbana, Champaign, Rantoul and surrounding areas within 50 miles.</p>
         </div>
