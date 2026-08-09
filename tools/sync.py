@@ -250,6 +250,18 @@ def sync_file(p: Path):
     if found:
         notes.append("phone region")
 
+    # 4b. plain "Phone: <tel link>" lines in the legal pages' contact blocks.
+    # Carriers read the privacy policy during A2P review, so the number there
+    # has to track the config the same way the footer does.
+    if HAS_PHONE:
+        html, n = re.subn(
+            r'Phone: <a href="tel:[^"]*">[^<]*</a>',
+            f'Phone: <a href="tel:{CFG["phoneE164"]}">{CFG["phone"]}</a>',
+            html,
+        )
+        if n:
+            notes.append(f"legal phone x{n}")
+
     # 5. business schema (home page only)
     if p.name == "index.html" and p.parent == ROOT:
         html, found = replace_region(html, "business-schema", gen_business_schema())
