@@ -1,7 +1,9 @@
 /* All Improvement Cleaning Services: small progressive-enhancement script.
    Everything degrades gracefully: with JS off, the nav links still work, the
    FAQ <details> still open, the quote form still submits by email, the stats
-   still show their final numbers and every reveal element is visible. */
+   still show their final numbers and every reveal element is visible.
+   Reveal elements are only ever hidden while this script is known to be
+   running -- see the .js / .reveal-ready snippet in each page's <head>. */
 (function () {
   "use strict";
 
@@ -48,6 +50,9 @@
   }
 
   /* ---- Reveal-on-scroll -------------------------------------------------- */
+  /* Claim the reveals before the <head> safety net's timer fires, so it knows
+     this script arrived and does not need to un-hide everything itself. */
+  window.__revealActive = true;
   var reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !reduceMotion) {
     var io = new IntersectionObserver(function (entries) {

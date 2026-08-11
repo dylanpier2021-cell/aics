@@ -575,15 +575,20 @@ ul { padding-left: 1.1rem; }
 .footer__bottom a:hover { color: var(--gold); }
 
 /* --- Utilities / reveal animation --------------------------------------- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
-.reveal.is-in { opacity: 1; transform: none; }
+/* Content only ever starts hidden when we are sure JS is running and can put
+   it back (the inline snippet in <head> sets .js). With JS off, blocked or
+   broken, the .js class is missing or .reveal-ready is set, so every reveal
+   element -- and every photo inside one -- paints normally. */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+.js .reveal.is-in,
+.js.reveal-ready .reveal { opacity: 1; transform: none; }
 /* staggered children */
 .reveal[data-delay="1"] { transition-delay: .08s; }
 .reveal[data-delay="2"] { transition-delay: .16s; }
 .reveal[data-delay="3"] { transition-delay: .24s; }
 .reveal[data-delay="4"] { transition-delay: .32s; }
 .reveal[data-delay="5"] { transition-delay: .40s; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
 
 .skip-link { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--on-gold); padding: 10px 16px; border-radius: 0 0 10px 0; z-index: 200; font-weight: 600; }
 .skip-link:focus { left: 0; }
