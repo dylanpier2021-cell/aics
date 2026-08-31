@@ -101,12 +101,68 @@
     // else: leave the pre-rendered final values in place
   }
 
-  /* ---- Quote form ------------------------------------------------------- */
+  /* ---- Star rating gate (/review/) --------------------------------------- */
+  /* The stars are ordinary links and each one already points where it should
+     go (1-3 to /feedback/, 4-5 to the Google review page), so the page still
+     works with this script blocked. All we add here is the wording under the
+     stars, the locked-in fill and a short beat after the tap so the visitor
+     sees it register before the browser leaves the page. */
+  var rating = document.querySelector("[data-rating]");
+  if (rating) {
+    var stars = [].slice.call(rating.querySelectorAll(".rating__star"));
+    var hint = document.querySelector("[data-rating-hint]");
+    var ratingStatus = document.querySelector("[data-rating-status]");
+    var hintDefault = hint ? hint.innerHTML : "";
+    var WORDS = ["", "Not good", "Below par", "Okay", "Great", "Excellent"];
+    var locked = false;
+
+    var setHint = function (text) { if (hint) hint.innerHTML = text; };
+
+    stars.forEach(function (star, i) {
+      var score = i + 1;
+      var preview = function () { if (!locked) setHint(WORDS[score]); };
+      star.addEventListener("mouseenter", preview);
+      star.addEventListener("focus", preview);
+
+      star.addEventListener("click", function (ev) {
+        // let ctrl/cmd/middle clicks open in a new tab the way any link would
+        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return;
+        ev.preventDefault();
+        if (locked) return;
+        locked = true;
+        rating.classList.add("is-locked");
+        stars.forEach(function (s, j) { s.classList.toggle("is-lit", j <= i); });
+        setHint(WORDS[score]);
+        if (ratingStatus) {
+          ratingStatus.className = "form-status is-ok";
+          ratingStatus.textContent = score >= 4
+            ? "Thank you! Taking you to Google so you can post it..."
+            : "Thank you. Taking you to a short private form so you can tell us what to fix...";
+        }
+        var href = star.getAttribute("href");
+        setTimeout(function () { window.location.href = href; }, 700);
+      });
+    });
+
+    rating.addEventListener("mouseleave", function () {
+      if (!locked) setHint(hintDefault);
+    });
+  }
+
+  /* ---- Feedback form: pre-select the rating carried over from /review/ ---- */
+  var ratingField = document.querySelector("[data-rating-field]");
+  if (ratingField) {
+    var passed = (location.search.match(/[?&]rating=([1-5])(?:&|$)/) || [])[1];
+    if (passed) ratingField.value = passed;
+  }
+
+  /* ---- Quote + feedback forms -------------------------------------------- */
   /* The markup carries Netlify Forms attributes, so when this site is hosted
      on Netlify the submission is captured automatically. Everywhere else we
-     fall back to opening a pre-filled email to the business. */
+     fall back to opening a pre-filled email to the business. A form can set
+     data-subject to override the default "Quote request" subject line. */
   var EMAIL = "aicscu1@gmail.com";
-  document.querySelectorAll("form[data-quote]").forEach(function (form) {
+  document.querySelectorAll("form[data-quote], form[data-feedback]").forEach(function (form) {
     var onNetlify = /netlify\.app$/.test(location.hostname) || location.hostname === "";
     form.addEventListener("submit", function (ev) {
       // honeypot: silently drop bots
@@ -120,13 +176,15 @@
       ev.preventDefault();
       var get = function (n) { var f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ""; };
       var name = get("name"), phone = get("phone"), email = get("email");
-      var service = get("service"), message = get("message");
-      var subject = "Quote request" + (service ? ": " + service : "");
+      var service = get("service"), message = get("message"), score = get("rating");
+      var subject = form.getAttribute("data-subject") ||
+        ("Quote request" + (service ? ": " + service : ""));
       var body =
+        (score ? "Rating: " + score + " out of 5\n" : "") +
         "Name: " + name + "\n" +
         "Email: " + email + "\n" +
         "Phone: " + phone + "\n" +
-        "Service: " + service + "\n\n" +
+        (service ? "Service: " + service + "\n" : "") + "\n" +
         "Details:\n" + message + "\n";
       var status = form.querySelector(".form-status");
       if (status) {

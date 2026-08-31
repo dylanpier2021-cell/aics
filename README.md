@@ -41,14 +41,18 @@ Point any static host at the repo root.
 /services/window-cleaning/         Windows in & out
 /services/move-out-cleaning/       Move-out / move-in
 /services/construction-cleaning/   Post-construction
+/blog/                             Blog hub (posts get added here)
 /contact/                          Quote form + NAP + SMS consent
 /contact/thank-you/                Post-submit page (noindex)
+/review/                           Star rating gate, 1-5 (noindex)
+/feedback/                         Private feedback form, 1-3 stars land here (noindex)
+/feedback/thank-you/               Post-submit page (noindex)
 /privacy-policy/                   Privacy policy (A2P 10DLC required)
 /terms-and-conditions/             Terms + SMS messaging section
 /404.html                          Not found (noindex)
 
 /assets/css/styles.css             All styling (design tokens in :root)
-/assets/js/main.js                 Nav, scroll reveal, form fallback
+/assets/js/main.js                 Nav, scroll reveal, star rating, form fallback
 /assets/img/                       brand marks, favicons, og-image.png
 /assets/img/work/                  real AICS job photos (see PHOTO-CREDITS.md)
 site.config.json                   SINGLE SOURCE OF TRUTH (see below)
@@ -64,7 +68,7 @@ robots.txt, sitemap.xml, netlify.toml
    ```bash
    python3 tools/sync.py
    ```
-   That rewrites every canonical, `og:url`, `og:image` and JSON-LD across all 14 pages.
+   That rewrites every canonical, `og:url`, `og:image` and JSON-LD across all 18 pages.
 
 2. **Add the phone number.** Set `phone` and `phoneE164` in `site.config.json` and run
    `python3 tools/sync.py`. Click-to-call links appear in the footer and the
@@ -118,7 +122,7 @@ re-run `python3 tools/sync.py`. It is idempotent. Use `python3 tools/sync.py --c
 in CI to fail the build if a page has drifted from the config.
 
 Change hours, the DBA, the address, the 50-mile service area or the legal links in
-ONE place, run sync, and all 14 pages update.
+ONE place, run sync, and all 18 pages update.
 
 ---
 
@@ -142,15 +146,49 @@ Carriers review this, so treat it as load-bearing:
 
 ---
 
+## Review funnel (`/review/`)
+
+`/review/` is one section: a headline and five stars. It is built for a QR code,
+a text message or a link on an invoice, not for search, so it is `noindex`.
+
+- **1, 2 or 3 stars** go to `/feedback/?rating=N`, a private form that reaches the
+  owner instead of the public internet.
+- **4 or 5 stars** go straight to the Google review page (`googleReview` in
+  `site.config.json`).
+
+Each star is a plain `<a>` with its destination already in the `href`, so the page
+works with JavaScript blocked. `main.js` only adds the fill-in preview, the wording
+under the stars and a ~700ms pause after the tap so the visitor sees it register
+before the browser leaves. The hover preview itself is pure CSS (`:has()`).
+
+To change where the stars split, edit the `href`s in `review/index.html`; to change
+the Google destination, edit `googleReview` in `site.config.json` (it feeds the
+footer link) and update the two 4/5-star `href`s to match.
+
+**One thing to know before you promote it:** Google's review policies prohibit
+"review gating", meaning selectively steering happy customers to the public review
+form while routing unhappy ones somewhere private. This page does exactly that by
+design, which is a real (if commonly ignored) policy risk for the Business Profile.
+The mitigation already in place: `/feedback/` never blocks anyone, it also links out
+to the public Google review page. To remove the risk entirely, point all five stars
+at Google and use `/feedback/` purely as a follow-up.
+
 ## Forms
 
-Both quote forms (`index.html` hero, `contact/index.html`) are progressive:
+The two quote forms (`index.html` hero, `contact/index.html`) and the feedback form
+(`feedback/index.html`) are progressive:
 
 - **On Netlify**: `data-netlify="true"` + a hidden `form-name` field means
   submissions are captured with no backend. Check them under *Forms* in the
   Netlify dashboard, and turn on email notifications to `aicscu1@gmail.com`.
+  The forms are named `contact` and `feedback`, so they land in separate lists.
 - **Anywhere else**: `assets/js/main.js` intercepts the submit and opens a
   pre-filled email to `aicscu1@gmail.com`, so a lead is never silently lost.
+  A form can set `data-subject` to override the default "Quote request" subject.
+  **Heads up:** that fallback triggers on any host that is not `*.netlify.app`,
+  which includes the live custom domain, so on `www.aicscleaning.com` every form
+  opens a mailto instead of reaching Netlify Forms. If you want Netlify to capture
+  them, widen the `onNetlify` check in `main.js` to cover the production host.
 - A honeypot field (`company-website`) filters bots.
 
 To use Formspree/Basin instead, change the `action` to their endpoint and drop
@@ -168,9 +206,26 @@ the `data-netlify` attribute.
 - **FAQ content** was drawn from real "People Also Ask" / search-intent research
   for each service (cost, frequency, what's included, insurance, access).
 - Every page has a unique `<title>`, meta description, canonical, and exactly one `<h1>`.
-- `sitemap.xml` lists the 10 indexable pages. Update `<lastmod>` on real edits and
+- `sitemap.xml` lists the 11 indexable pages. Update `<lastmod>` on real edits and
   submit it in Google Search Console.
-- Noindexed on purpose: `/contact/thank-you/` and `/404.html`.
+- Noindexed on purpose: `/contact/thank-you/`, `/review/`, `/feedback/`,
+  `/feedback/thank-you/` and `/404.html`.
+
+### Adding a blog post
+
+`/blog/` is the hub. It ships with no posts on purpose (inventing them would be
+fabricated content) and shows a "first posts are on the way" panel instead.
+To publish one:
+
+1. Create `/blog/<url-slug>/index.html`. Copy a service page so the head, header
+   nav and the `<!-- @shared:footer -->` markers stay identical, then replace
+   `<main>` with the article and wrap the body copy in `.prose`.
+2. Paste the card template from the comment inside `/blog/index.html` into the
+   `.grid` there, newest first. Delete the `data-blog-empty` panel once the first
+   card is live.
+3. Add the post to `sitemap.xml` and to the `blogPost` array in the `Blog`
+   JSON-LD at the top of `/blog/index.html`. Only list posts that exist.
+4. Run `python3 tools/sync.py` so the new page picks up the shared footer.
 
 ### After launch
 - Create/claim the **Google Business Profile** and make the NAP match this site

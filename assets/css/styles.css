@@ -492,6 +492,43 @@ ul { padding-left: 1.1rem; }
 .form-status { margin-top: 16px; padding: 13px 15px; border-radius: 11px; font-size: .92rem; font-weight: 500; display: none; }
 .form-status.is-ok  { display: block; background: rgba(212,175,55,.12); color: var(--gold-light); border: 1px solid var(--gold-border); }
 
+/* --- Star rating gate (/review/) ---------------------------------------- */
+/* Five links, not a form: each star already carries its own destination, so a
+   tap works with JavaScript off. The fill-in preview is pure CSS (:has), and
+   .is-lit is what main.js leaves behind once a star has been chosen. */
+.rating { display: flex; justify-content: center; flex-wrap: nowrap; gap: clamp(2px, 1.4vw, 12px); margin-top: 36px; }
+.rating__star {
+  display: grid; place-items: center; padding: clamp(6px, 1.6vw, 12px);
+  border-radius: 16px; color: var(--gold); line-height: 0;
+  transition: transform .18s ease, background .18s ease;
+}
+.rating__star svg {
+  width: clamp(40px, 10.5vw, 60px); height: clamp(40px, 10.5vw, 60px); overflow: visible;
+  fill: transparent; stroke: currentColor; stroke-width: 1.4; stroke-linejoin: round;
+  transition: fill .18s ease, filter .18s ease;
+}
+.rating__star:hover { background: rgba(212,175,55,.08); transform: translateY(-3px); }
+.rating__star.is-lit svg { fill: var(--gold); filter: drop-shadow(0 5px 16px var(--gold-glow)); }
+
+/* Pointing at (or tabbing to) star N fills 1..N. Skipped once a star is
+   locked in, so the confirmation state is not overwritten by a stray hover. */
+.rating:not(.is-locked):has(.rating__star:nth-child(1):is(:hover, :focus-visible)) .rating__star:nth-child(-n+1) svg,
+.rating:not(.is-locked):has(.rating__star:nth-child(2):is(:hover, :focus-visible)) .rating__star:nth-child(-n+2) svg,
+.rating:not(.is-locked):has(.rating__star:nth-child(3):is(:hover, :focus-visible)) .rating__star:nth-child(-n+3) svg,
+.rating:not(.is-locked):has(.rating__star:nth-child(4):is(:hover, :focus-visible)) .rating__star:nth-child(-n+4) svg,
+.rating:not(.is-locked):has(.rating__star:nth-child(5):is(:hover, :focus-visible)) .rating__star:nth-child(-n+5) svg {
+  fill: var(--gold);
+}
+
+.rating__hint {
+  margin-top: 16px; min-height: 1.6em; text-align: center;
+  font-size: .84rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--text-muted); transition: color .18s ease;
+}
+.rating:not(.is-locked):hover ~ .rating__hint { color: var(--gold); }
+.rating__foot { font-size: .93rem; margin-top: 22px; }
+@media (max-width: 400px) { .rating { gap: 0; } .rating__star { padding: 5px; } }
+
 /* --- Trust strip --------------------------------------------------------- */
 .strip { background: var(--bg-elevated); border-block: 1px solid var(--hairline); }
 .strip__row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 44px; padding-block: 24px; text-align: center; }
