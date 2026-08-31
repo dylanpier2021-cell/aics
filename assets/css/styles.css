@@ -206,7 +206,11 @@ ul { padding-left: 1.1rem; }
 .nav__toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; color: var(--text-primary); }
 .nav__toggle svg { width: 28px; height: 28px; }
 
-@media (max-width: 960px) {
+/* Nav collapses to the burger below 1080px. The desktop row (5 links + phone
+   + CTA) needs about 990px of content box, so anything narrower clipped the
+   "Get a Free Quote" button off the right edge. Raise this again if a link
+   is ever added to the nav. */
+@media (max-width: 1080px) {
   .nav__actions .btn { display: none; }
   .nav__toggle { display: inline-flex; }
   .nav__links {

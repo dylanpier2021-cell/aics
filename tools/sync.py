@@ -100,6 +100,7 @@ def gen_footer():
             <li><a href="/">Home</a></li>
             <li><a href="/about/">About Us</a></li>
             <li><a href="/services/">All Services</a></li>
+            <li><a href="/blog/">Blog</a></li>
             <li><a href="/contact/">Contact</a></li>
             <li><a href="/#faq">FAQs</a></li>
             <li><a href="{CFG['legalPages']['privacy']}">Privacy Policy</a></li>
