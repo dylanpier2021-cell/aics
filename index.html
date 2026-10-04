@@ -37,6 +37,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    /* Trust badges */
+    .badges { padding-block: 64px 8px; }
+    .badges__row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px 24px; text-align: center; }
+    .badge-item img { width: 132px; height: 132px; margin: 0 auto 18px; display: block; transition: transform .3s ease; }
+    .badge-item:hover img { transform: translateY(-4px); }
+    .badge-item h3 { font-family: var(--font-body); font-size: 1.02rem; font-weight: 600; color: var(--text-primary); margin: 0 0 4px; }
+    .badge-item p { font-size: .88rem; color: var(--text-muted); margin: 0; }
+    @media (max-width: 900px) { .badges__row { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px) { .badges { padding-block: 48px 0; } .badges__row { grid-template-columns: repeat(2, 1fr); } .badge-item img { width: 104px; height: 104px; } .badge-item:last-child { grid-column: 1 / -1; } }
+  </style>
   <!-- Reveal-animation safety net. Marks the page as JS-capable so the CSS may
        hide reveal elements, then un-hides everything if main.js has not taken
        over shortly after load (blocked script, network error, JS exception).
@@ -339,6 +350,39 @@
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg> Based in Urbana, IL</div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg> Flexible scheduling</div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Free, honest quotes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= TRUST BADGES ============================= -->
+    <section class="badges" aria-label="Why clients trust us">
+      <div class="container">
+        <div class="badges__row">
+          <div class="badge-item reveal">
+            <img src="/assets/img/badges/trusted.svg" alt="" width="132" height="132" loading="lazy">
+            <h3>100% Trusted</h3>
+            <p>5-star Google reviews</p>
+          </div>
+          <div class="badge-item reveal" data-delay="1">
+            <img src="/assets/img/badges/available-24-7.svg" alt="" width="132" height="132" loading="lazy">
+            <h3>24/7 Availability</h3>
+            <p>Request a quote anytime</p>
+          </div>
+          <div class="badge-item reveal" data-delay="2">
+            <img src="/assets/img/badges/refund-policy.svg" alt="" width="132" height="132" loading="lazy">
+            <h3>Refund Policy</h3>
+            <p>Not right? We make it right</p>
+          </div>
+          <div class="badge-item reveal" data-delay="3">
+            <img src="/assets/img/badges/locally-owned.svg" alt="" width="132" height="132" loading="lazy">
+            <h3>Locally Owned</h3>
+            <p>Based in Urbana, IL</p>
+          </div>
+          <div class="badge-item reveal" data-delay="4">
+            <img src="/assets/img/badges/licensed.svg" alt="" width="132" height="132" loading="lazy">
+            <h3>Licensed</h3>
+            <p>Illinois LLC</p>
+          </div>
         </div>
       </div>
     </section>
