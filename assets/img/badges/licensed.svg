@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Licensed"><title>Licensed</title><defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E39A"/><stop offset=".45" stop-color="#D4AF37"/><stop offset="1" stop-color="#8E6F17"/></linearGradient>
+  <linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0D77B"/><stop offset="1" stop-color="#B8921F"/></linearGradient>
+  <radialGradient id="k" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#26262c"/><stop offset="1" stop-color="#0a0a0c"/></radialGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".45"/></filter>
+</defs><g filter="url(#sh)">
+  <path d="M70 120 L52 192 L70 180 L82 196 L96 130Z" fill="#9C7C1E"/>
+  <path d="M130 120 L148 192 L130 180 L118 196 L104 130Z" fill="#9C7C1E"/>
+  <path d="M74 124 L60 182 L71 175 L79 185 L91 132Z" fill="#D4AF37"/>
+  <path d="M126 124 L140 182 L129 175 L121 185 L109 132Z" fill="#D4AF37"/></g>
+<g filter="url(#sh)"><path d="M178.00,84.00 L169.40,93.14 L175.34,104.19 L164.67,110.79 L167.55,123.00 L155.53,126.61 L155.15,139.15 L142.61,139.53 L139.00,151.55 L126.79,148.67 L120.19,159.34 L109.14,153.40 L100.00,162.00 L90.86,153.40 L79.81,159.34 L73.21,148.67 L61.00,151.55 L57.39,139.53 L44.85,139.15 L44.47,126.61 L32.45,123.00 L35.33,110.79 L24.66,104.19 L30.60,93.14 L22.00,84.00 L30.60,74.86 L24.66,63.81 L35.33,57.21 L32.45,45.00 L44.47,41.39 L44.85,28.85 L57.39,28.47 L61.00,16.45 L73.21,19.33 L79.81,8.66 L90.86,14.60 L100.00,6.00 L109.14,14.60 L120.19,8.66 L126.79,19.33 L139.00,16.45 L142.61,28.47 L155.15,28.85 L155.53,41.39 L167.55,45.00 L164.67,57.21 L175.34,63.81 L169.40,74.86Z" fill="url(#g)"/></g>
+<circle cx="100" cy="84" r="64" fill="url(#k)"/>
+<circle cx="100" cy="84" r="60" fill="none" stroke="url(#g)" stroke-width="1.3"/>
+<path id="t5" d="M53,84 A47,47 0 0 1 147,84" fill="none"/><text font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="3.4" fill="#F0D77B"><textPath href="#t5" startOffset="50%" text-anchor="middle">LICENSED</textPath></text>
+<path id="t5b" d="M45,84 A55,55 0 0 0 155,84" fill="none"/><text font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#F0D77B"><textPath href="#t5b" startOffset="50%" text-anchor="middle">ILLINOIS LLC</textPath></text>
+<text x="100" y="96" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="900" text-anchor="middle" fill="url(#gs)">IL</text></svg>

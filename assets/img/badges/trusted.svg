@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="100% Trusted"><title>100% Trusted</title><defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E39A"/><stop offset=".45" stop-color="#D4AF37"/><stop offset="1" stop-color="#8E6F17"/></linearGradient>
+  <linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0D77B"/><stop offset="1" stop-color="#B8921F"/></linearGradient>
+  <radialGradient id="k" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#26262c"/><stop offset="1" stop-color="#0a0a0c"/></radialGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".45"/></filter>
+</defs><g filter="url(#sh)"><path d="M192.00,100.00 L184.53,108.88 L189.99,119.13 L180.84,126.27 L184.05,137.42 L173.61,142.50 L174.43,154.08 L163.17,156.88 L161.56,168.37 L149.96,168.77 L146.00,179.67 L134.57,177.65 L128.43,187.50 L117.67,183.14 L109.62,191.50 L100.00,185.00 L90.38,191.50 L82.33,183.14 L71.57,187.50 L65.43,177.65 L54.00,179.67 L50.04,168.77 L38.44,168.37 L36.83,156.88 L25.57,154.08 L26.39,142.50 L15.95,137.42 L19.16,126.27 L10.01,119.13 L15.47,108.88 L8.00,100.00 L15.47,91.12 L10.01,80.87 L19.16,73.73 L15.95,62.58 L26.39,57.50 L25.57,45.92 L36.83,43.12 L38.44,31.63 L50.04,31.23 L54.00,20.33 L65.43,22.35 L71.57,12.50 L82.33,16.86 L90.38,8.50 L100.00,15.00 L109.62,8.50 L117.67,16.86 L128.43,12.50 L134.57,22.35 L146.00,20.33 L149.96,31.23 L161.56,31.63 L163.17,43.12 L174.43,45.92 L173.61,57.50 L184.05,62.58 L180.84,73.73 L189.99,80.87 L184.53,91.12Z" fill="url(#g)" stroke-linejoin="round"/></g>
+<circle cx="100" cy="100" r="78" fill="url(#k)"/>
+<circle cx="100" cy="100" r="74" fill="none" stroke="url(#g)" stroke-width="1.5"/>
+<circle cx="100" cy="100" r="46" fill="none" stroke="url(#g)" stroke-width="3"/>
+<path id="t1" d="M42,100 A58,58 0 0 1 158,100" fill="none"/><text font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="4" fill="#F0D77B"><textPath href="#t1" startOffset="50%" text-anchor="middle">TRUSTED</textPath></text>
+<path id="t1b" d="M34,100 A66,66 0 0 0 166,100" fill="none"/><text font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#F0D77B"><textPath href="#t1b" startOffset="50%" text-anchor="middle">BY OUR CLIENTS</textPath></text>
+<circle cx="39.00" cy="100.00" r="2.6" fill="url(#g)"/><circle cx="161.00" cy="100.00" r="2.6" fill="url(#g)"/>
+<text x="100" y="104" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="27" font-weight="900" text-anchor="middle" fill="url(#gs)">100%</text>
+<text x="100" y="121" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="7" font-weight="700" letter-spacing="1.3" text-anchor="middle" fill="#F0D77B">GUARANTEED</text></svg>

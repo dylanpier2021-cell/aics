@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Refund Policy"><title>Refund Policy</title><defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E39A"/><stop offset=".45" stop-color="#D4AF37"/><stop offset="1" stop-color="#8E6F17"/></linearGradient>
+  <linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0D77B"/><stop offset="1" stop-color="#B8921F"/></linearGradient>
+  <radialGradient id="k" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#26262c"/><stop offset="1" stop-color="#0a0a0c"/></radialGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".45"/></filter>
+</defs><g filter="url(#sh)"><path d="M100 8 L172 32 C172 102 146 152 100 192 C54 152 28 102 28 32 Z" fill="url(#g)" stroke-linejoin="round"/></g>
+<path d="M100 22 L159 42 C159 101 137 141 100 175 C63 141 41 101 41 42 Z" fill="url(#k)"/>
+<path d="M100 30 L152 47 C152 99 132 135 100 165 C68 135 48 99 48 47 Z" fill="none" stroke="url(#g)" stroke-width="1.3"/>
+<path d="M76 72 l17 17 l33-35" fill="none" stroke="url(#gs)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<g filter="url(#sh)">
+  <path d="M10 112 L26 112 L26 138 L10 138 L18 125Z" fill="#8E6F17"/>
+  <path d="M190 112 L174 112 L174 138 L190 138 L182 125Z" fill="#8E6F17"/>
+  <rect x="20" y="106" width="160" height="28" rx="2" fill="url(#g)"/></g>
+<text x="100" y="125" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="900" letter-spacing="1.6" text-anchor="middle" fill="#0b0b0d">REFUND POLICY</text>
+<g fill="url(#g)"><circle cx="86" cy="152" r="2.4"/><circle cx="100" cy="155" r="2.4"/><circle cx="114" cy="152" r="2.4"/></g></svg>
