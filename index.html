@@ -43,8 +43,8 @@
     .badges__row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px 24px; text-align: center; }
     .badge-item img { width: 132px; height: 132px; margin: 0 auto 18px; display: block; transition: transform .3s ease; }
     .badge-item:hover img { transform: translateY(-4px); }
-    .badge-item h3 { font-family: var(--font-body); font-size: 1.02rem; font-weight: 600; color: var(--text-primary); margin: 0 0 4px; }
-    .badge-item p { font-size: .88rem; color: var(--text-muted); margin: 0; }
+    .badge-item__title { line-height: 1.3; font-family: var(--font-body); font-size: 1.02rem; font-weight: 600; color: var(--text-primary); margin: 0 0 4px; }
+    .badge-item p:not(.badge-item__title) { font-size: .88rem; color: var(--text-muted); margin: 0; }
     @media (max-width: 900px) { .badges__row { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 600px) { .badges { padding-block: 40px; } .badges__row { grid-template-columns: repeat(2, 1fr); } .badge-item img { width: 104px; height: 104px; } .badge-item:last-child { grid-column: 1 / -1; } }
   </style>
@@ -319,7 +319,7 @@
              is too small for a full-bleed 100svh hero; swap this the moment a
              high-resolution job photo comes in. Alt stays generic so the page
              never claims a stock image is an AICS crew. -->
-        <img src="/assets/img/site/hero.jpg" alt="" width="1600" height="1067" fetchpriority="high" decoding="async">
+        <img src="/assets/img/site/hero.jpg" alt="Two cleaners in work overalls vacuuming and mopping the tiled floor of a bright living room" width="1600" height="1067" fetchpriority="high" decoding="async">
       </div>
       <div class="hero__overlay"></div>
       <div class="container hero__inner">
@@ -347,27 +347,27 @@
         <div class="badges__row">
           <div class="badge-item reveal">
             <img src="/assets/img/badges/trusted.svg" alt="" width="132" height="132" loading="lazy">
-            <h3>100% Trusted</h3>
+            <p class="badge-item__title">100% Trusted</p>
             <p>5-star Google reviews</p>
           </div>
           <div class="badge-item reveal" data-delay="1">
             <img src="/assets/img/badges/flexible-scheduling.svg" alt="" width="132" height="132" loading="lazy">
-            <h3>Flexible Scheduling</h3>
+            <p class="badge-item__title">Flexible Scheduling</p>
             <p>Mon&ndash;Sat, 8am&ndash;7pm</p>
           </div>
           <div class="badge-item reveal" data-delay="2">
             <img src="/assets/img/badges/satisfaction-guaranteed.svg" alt="" width="132" height="132" loading="lazy">
-            <h3>Satisfaction Guaranteed</h3>
+            <p class="badge-item__title">Satisfaction Guaranteed</p>
             <p>Not right? We make it right</p>
           </div>
           <div class="badge-item reveal" data-delay="3">
             <img src="/assets/img/badges/locally-owned.svg" alt="" width="132" height="132" loading="lazy">
-            <h3>Locally Owned</h3>
+            <p class="badge-item__title">Locally Owned</p>
             <p>Based in Urbana, IL</p>
           </div>
           <div class="badge-item reveal" data-delay="4">
             <img src="/assets/img/badges/licensed.svg" alt="" width="132" height="132" loading="lazy">
-            <h3>Licensed</h3>
+            <p class="badge-item__title">Licensed</p>
             <p>Illinois LLC, fully insured</p>
           </div>
         </div>
@@ -430,12 +430,12 @@
       <div class="container">
         <div class="head center reveal">
           <span class="eyebrow is-centered">What we do</span>
-          <h2>Six Services, One Dependable Local Team</h2>
+          <h2>Cleaning Services We Offer in Champaign County</h2>
           <p class="lead">From a weekly office wipe-down to a full post-construction cleanup, AICS handles the jobs that keep your space looking its best. Pick a service to see what is included.</p>
         </div>
         <div class="grid grid--3">
           <a class="card service-card reveal" href="/services/commercial-cleaning/">
-            <span class="card__media"><img src="/assets/img/work/medical-office-workstation-cleaning.jpg" alt="Medical office workstations and floors cleaned by AICS in Champaign County, IL" width="763" height="573" loading="lazy" decoding="async"></span>
+            <span class="card__media"><img src="/assets/img/work/school-office-cleaning.jpg" alt="School office and workroom with desks cleared and floors cleaned by AICS" width="556" height="741" loading="lazy" decoding="async"></span>
             <span class="card__body">
               <h3>Commercial Cleaning</h3>
               <p>Reliable janitorial and office cleaning that keeps your workplace healthy, presentable and ready for customers.</p>
@@ -492,7 +492,7 @@
       <div class="container">
         <div class="breaker__inner reveal">
           <span class="eyebrow">The standard</span>
-          <h2>Spotless Is Not a One-Time Thing. It Is Every Single Visit.</h2>
+          <h2>Our Checklist-Based Cleaning Process</h2>
           <p>We build a checklist around your space and hold every clean to it, so the fifth visit looks exactly like the first. That is what it means to hand the cleaning to a team you can count on.</p>
           <div class="btn-row">
             <a class="btn btn--primary btn--lg" href="#quote">Get a free quote</a>
@@ -506,24 +506,23 @@
       <div class="container">
         <div class="head center reveal">
           <span class="eyebrow is-centered">Our work</span>
-          <h2>A Closer Look at the Details</h2>
+          <h2>Recent Commercial Cleaning Jobs in Urbana &amp; Champaign</h2>
           <p class="lead">Real jobs, real spaces. These are photos from medical clinics, daycares, schools and offices we clean across Urbana, Champaign and Rantoul.</p>
         </div>
         <!-- Real AICS job photos (client-owned). Tile sizes are matched to each
              source: portrait shots go in `tall`, landscape in the square-ish
              cells, and only the widest files get `wide`. -->
         <div class="gallery__grid reveal">
-          <figure class="gallery__item tall"><img src="/assets/img/work/waxed-hallway-floor-shine.jpg" alt="School hallway floor stripped, waxed and buffed to a high gloss by AICS in Urbana, IL" width="480" height="640" loading="lazy" decoding="async"><figcaption class="gallery__cap">Strip, wax &amp; buff</figcaption></figure>
+          <figure class="gallery__item tall"><img src="/assets/img/work/commercial-restroom-cleaning.jpg" alt="Accessible facility restroom with fixtures cleaned and wood-look floor mopped by AICS" width="480" height="640" loading="lazy" decoding="async"><figcaption class="gallery__cap">Restrooms</figcaption></figure>
           <figure class="gallery__item"><img src="/assets/img/work/medical-clinic-floor-cleaning.jpg" alt="Cleaned floors and donation floor at a plasma clinic in Champaign County, IL" width="763" height="572" loading="lazy" decoding="async"><figcaption class="gallery__cap">Medical &amp; plasma clinics</figcaption></figure>
           <figure class="gallery__item"><img src="/assets/img/work/medical-office-workstation-cleaning.jpg" alt="Clinic workstations, counters and floors cleaned after hours by AICS" width="763" height="573" loading="lazy" decoding="async"><figcaption class="gallery__cap">Workstations &amp; counters</figcaption></figure>
           <figure class="gallery__item tall"><img src="/assets/img/work/daycare-hallway-floor-waxing.jpg" alt="Daycare hallway with freshly waxed wood-look flooring cleaned by AICS" width="763" height="1017" loading="lazy" decoding="async"><figcaption class="gallery__cap">Daycare &amp; childcare</figcaption></figure>
-          <figure class="gallery__item wide"><img src="/assets/img/work/medical-clinic-lobby-cleaning.jpg" alt="Clinic lobby and reception counter cleaned by All Improvement Cleaning Services" width="1080" height="810" loading="lazy" decoding="async"><figcaption class="gallery__cap">Lobbies &amp; reception</figcaption></figure>
+          <figure class="gallery__item tall"><img src="/assets/img/work/daycare-playroom-floor-cleaning.jpg" alt="Daycare playroom with wood-look floors cleaned and polished by AICS" width="539" height="719" loading="lazy" decoding="async"><figcaption class="gallery__cap">Daycare playrooms</figcaption></figure>
           <figure class="gallery__item tall"><img src="/assets/img/work/school-classroom-cleaning.jpg" alt="School classroom cleaned and floors mopped by AICS in Urbana, IL" width="1080" height="1440" loading="lazy" decoding="async"><figcaption class="gallery__cap">Schools &amp; classrooms</figcaption></figure>
           <figure class="gallery__item"><img src="/assets/img/work/medical-clinic-treatment-room-cleaning.jpg" alt="Plasma donation room with equipment and floors cleaned and sanitized by AICS" width="763" height="572" loading="lazy" decoding="async"><figcaption class="gallery__cap">Treatment rooms</figcaption></figure>
-          <figure class="gallery__item"><img src="/assets/img/work/office-cleaning-urbana-il.jpg" alt="Private office cleaned with hardwood floor mopped and polished by AICS" width="480" height="640" loading="lazy" decoding="async"><figcaption class="gallery__cap">Private offices</figcaption></figure>
-          <figure class="gallery__item tall"><img src="/assets/img/work/daycare-infant-room-cleaning.jpg" alt="Daycare infant room with cleaned floors and sanitized play rug" width="539" height="719" loading="lazy" decoding="async"><figcaption class="gallery__cap">Playrooms &amp; nurseries</figcaption></figure>
+          <figure class="gallery__item tall"><img src="/assets/img/work/daycare-infant-room-cleaning.jpg" alt="Daycare infant room with cleaned floors and sanitized play rug" width="539" height="719" loading="lazy" decoding="async"><figcaption class="gallery__cap">Infant rooms &amp; nurseries</figcaption></figure>
           <figure class="gallery__item wide"><img src="/assets/img/work/clinic-waiting-area-cleaning.jpg" alt="Clinic waiting area cleaned after hours, chairs reset and floors mopped" width="763" height="572" loading="lazy" decoding="async"><figcaption class="gallery__cap">After-hours service</figcaption></figure>
-        </div>
+          <figure class="gallery__item"><img src="/assets/img/work/office-cleaning-urbana-il.jpg" alt="Private office cleaned with hardwood floor mopped and polished by AICS" width="480" height="640" loading="lazy" decoding="async"><figcaption class="gallery__cap">Private offices</figcaption></figure></div>
       </div>
     </section>
 
