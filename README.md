@@ -180,10 +180,10 @@ The two quote forms (`index.html` hero, `contact/index.html`) and the feedback f
 
 - **On Netlify**: `data-netlify="true"` + a hidden `form-name` field means
   submissions are captured with no backend. Check them under *Forms* in the
-  Netlify dashboard, and turn on email notifications to `aicscu1@gmail.com`.
+  Netlify dashboard, and turn on email notifications to `info@aicscleaning.com`.
   The forms are named `contact` and `feedback`, so they land in separate lists.
 - **Anywhere else**: `assets/js/main.js` intercepts the submit and opens a
-  pre-filled email to `aicscu1@gmail.com`, so a lead is never silently lost.
+  pre-filled email to `info@aicscleaning.com`, so a lead is never silently lost.
   A form can set `data-subject` to override the default "Quote request" subject.
   **Heads up:** that fallback triggers on any host that is not `*.netlify.app`,
   which includes the live custom domain, so on `www.aicscleaning.com` every form

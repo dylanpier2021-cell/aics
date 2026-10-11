@@ -161,7 +161,7 @@
      on Netlify the submission is captured automatically. Everywhere else we
      fall back to opening a pre-filled email to the business. A form can set
      data-subject to override the default "Quote request" subject line. */
-  var EMAIL = "aicscu1@gmail.com";
+  var EMAIL = "info@aicscleaning.com";
   document.querySelectorAll("form[data-quote], form[data-feedback]").forEach(function (form) {
     var onNetlify = /netlify\.app$/.test(location.hostname) || location.hostname === "";
     form.addEventListener("submit", function (ev) {

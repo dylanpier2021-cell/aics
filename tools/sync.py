@@ -108,7 +108,7 @@ def gen_footer():
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Get in touch</h4>
+          <h4>Get in Touch</h4>
           <div class="footer__contact">
             <a href="mailto:{CFG['email']}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> {CFG['email']}</a>{phone_html}
             <address><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg> <span>{A['street']}<br>{A['city']}, {A['region']} {A['zip']}</span></address>
