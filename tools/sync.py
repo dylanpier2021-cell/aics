@@ -218,11 +218,11 @@ def sync_file(p: Path):
     html = orig = p.read_text(encoding="utf-8")
     notes = []
 
-    # 1. base URL: rewrite any other host used in canonical/og/schema
+    # 1. base URL: rewrite old addresses of THIS site (other spellings of the
+    #    domain, Netlify preview hosts) to baseUrl. Links to any other site,
+    #    such as cited sources in blog posts, are left alone.
     for host in set(re.findall(r"https?://([A-Za-z0-9.\-]+)/", html)):
-        if host in ("schema.org", "www.w3.org", "fonts.googleapis.com",
-                    "fonts.gstatic.com", "maps.google.com", "www.google.com",
-                    "images.pexels.com", "search.google.com", "g.page"):
+        if not (host.endswith(".netlify.app") or "aicscleaning" in host):
             continue
         if host != BASE.split("//")[1]:
             html = html.replace(f"https://{host}/", f"{BASE}/")
