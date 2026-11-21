@@ -51,6 +51,8 @@
     .rating-summary strong { color: var(--text-primary); font-size: 1.1rem; }
     .rating-summary__stars { display: inline-flex; gap: 2px; color: var(--gold); }
     .rating-summary__stars svg { width: 18px; height: 18px; }
+    /* No decorative line before the small gold section labels on the homepage */
+    .eyebrow::before { content: none; display: none; }
   </style>
   <!-- Reveal-animation safety net. Marks the page as JS-capable so the CSS may
        hide reveal elements, then un-hides everything if main.js has not taken
