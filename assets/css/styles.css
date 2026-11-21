@@ -112,7 +112,6 @@ ul { padding-left: 1.1rem; }
   font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 20px;
 }
-.eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--gold); flex: none; }
 .center .eyebrow, .eyebrow.is-centered { justify-content: center; }
 
 .lead { font-size: 1.18rem; line-height: 1.65; color: var(--text-muted); }
