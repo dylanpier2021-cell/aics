@@ -1,3 +1,5 @@
+# NOTE: the live site (www.aicscleaning.com) is served by Vercel, which ignores
+# this file. Redirects that must work live go in vercel.json.
 # Netlify config for the AICS static site.
 # There is no build step: the repo root IS the site.
 
