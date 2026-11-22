@@ -51,6 +51,9 @@
     .rating-summary strong { color: var(--text-primary); font-size: 1.1rem; }
     .rating-summary__stars { display: inline-flex; gap: 2px; color: var(--gold); }
     .rating-summary__stars svg { width: 18px; height: 18px; }
+    /* No standalone gold lines on the homepage: above the steps or across the top of the footer */
+    .step { border-top: 0; padding-top: 0; }
+    .site-footer { border-top: 0; }
   </style>
   <!-- Reveal-animation safety net. Marks the page as JS-capable so the CSS may
        hide reveal elements, then un-hides everything if main.js has not taken
