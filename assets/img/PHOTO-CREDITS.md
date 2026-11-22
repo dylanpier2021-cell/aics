@@ -56,7 +56,6 @@ Their alt text describes the scene and never claims it is an AICS job - keep it
 that way until a real photo replaces the file.
 
 - `site/hero.jpg`: B&W crew cleaning an interior (homepage hero). Pexels 6195274
-- `site/breaker-2.jpg`: storefront at night (homepage image breaker). Pexels 6197086
 - `site/breaker-3.jpg`: B&W squeegee on glass (contact hero). Pexels 6197120
 - `services/home.jpg`: vacuuming a modern living room. Pexels 6195949
 - `services/windows.jpg`: cleaning a large interior window. Pexels 6197122
