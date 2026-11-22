@@ -1,0 +1,94 @@
+{
+  "redirects": [
+    {
+      "source": "/services/commercial-cleaning",
+      "destination": "/services/commercial-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/commercial-cleaning/",
+      "destination": "/services/commercial-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/commercial-cleaning/:path*",
+      "destination": "/services/commercial-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/home-cleaning",
+      "destination": "/services/home-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/home-cleaning/",
+      "destination": "/services/home-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/home-cleaning/:path*",
+      "destination": "/services/home-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/floor-cleaning-and-waxing",
+      "destination": "/services/floor-cleaning-and-waxing-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/floor-cleaning-and-waxing/",
+      "destination": "/services/floor-cleaning-and-waxing-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/floor-cleaning-and-waxing/:path*",
+      "destination": "/services/floor-cleaning-and-waxing-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/window-cleaning",
+      "destination": "/services/window-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/window-cleaning/",
+      "destination": "/services/window-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/window-cleaning/:path*",
+      "destination": "/services/window-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/move-out-cleaning",
+      "destination": "/services/move-out-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/move-out-cleaning/",
+      "destination": "/services/move-out-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/move-out-cleaning/:path*",
+      "destination": "/services/move-out-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/construction-cleaning",
+      "destination": "/services/construction-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/construction-cleaning/",
+      "destination": "/services/construction-cleaning-champaign-county/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/construction-cleaning/:path*",
+      "destination": "/services/construction-cleaning-champaign-county/",
+      "statusCode": 301
+    }
+  ]
+}
