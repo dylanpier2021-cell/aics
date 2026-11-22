@@ -35,12 +35,12 @@ Point any static host at the repo root.
 /                                  index.html          Home (hero, services, FAQ)
 /about/                            About + values
 /services/                         Services hub
-/services/commercial-cleaning/     Commercial & office
-/services/home-cleaning/           Home / recurring & deep
-/services/floor-cleaning-and-waxing/  Strip, wax & buff
-/services/window-cleaning/         Windows in & out
-/services/move-out-cleaning/       Move-out / move-in
-/services/construction-cleaning/   Post-construction
+/services/commercial-cleaning-champaign-county/     Commercial & office
+/services/home-cleaning-champaign-county/           Home / recurring & deep
+/services/floor-cleaning-and-waxing-champaign-county/  Strip, wax & buff
+/services/window-cleaning-champaign-county/         Windows in & out
+/services/move-out-cleaning-champaign-county/       Move-out / move-in
+/services/construction-cleaning-champaign-county/   Post-construction
 /blog/                             Blog hub (posts get added here)
 /contact/                          Quote form + NAP + SMS consent
 /contact/thank-you/                Post-submit page (noindex)

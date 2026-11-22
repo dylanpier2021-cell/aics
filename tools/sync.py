@@ -86,12 +86,12 @@ def gen_footer():
         <div class="footer__col">
           <h4>Services</h4>
           <ul>
-            <li><a href="/services/commercial-cleaning/">Commercial Cleaning</a></li>
-            <li><a href="/services/home-cleaning/">Home Cleaning</a></li>
-            <li><a href="/services/floor-cleaning-and-waxing/">Floor Cleaning &amp; Waxing</a></li>
-            <li><a href="/services/window-cleaning/">Window Cleaning</a></li>
-            <li><a href="/services/move-out-cleaning/">Move-Out Cleaning</a></li>
-            <li><a href="/services/construction-cleaning/">Construction Cleaning</a></li>
+            <li><a href="/services/commercial-cleaning-champaign-county/">Commercial Cleaning</a></li>
+            <li><a href="/services/home-cleaning-champaign-county/">Home Cleaning</a></li>
+            <li><a href="/services/floor-cleaning-and-waxing-champaign-county/">Floor Cleaning &amp; Waxing</a></li>
+            <li><a href="/services/window-cleaning-champaign-county/">Window Cleaning</a></li>
+            <li><a href="/services/move-out-cleaning-champaign-county/">Move-Out Cleaning</a></li>
+            <li><a href="/services/construction-cleaning-champaign-county/">Construction Cleaning</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -194,12 +194,12 @@ def gen_business_schema():
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": n,
              "url": f"{BASE}/services/{s}/"}}
             for n, s in [
-                ("Commercial Cleaning", "commercial-cleaning"),
-                ("Home Cleaning", "home-cleaning"),
-                ("Floor Cleaning and Waxing", "floor-cleaning-and-waxing"),
-                ("Window Cleaning", "window-cleaning"),
-                ("Move-Out Cleaning", "move-out-cleaning"),
-                ("Construction Cleaning", "construction-cleaning"),
+                ("Commercial Cleaning", "commercial-cleaning-champaign-county"),
+                ("Home Cleaning", "home-cleaning-champaign-county"),
+                ("Floor Cleaning and Waxing", "floor-cleaning-and-waxing-champaign-county"),
+                ("Window Cleaning", "window-cleaning-champaign-county"),
+                ("Move-Out Cleaning", "move-out-cleaning-champaign-county"),
+                ("Construction Cleaning", "construction-cleaning-champaign-county"),
             ]
         ],
     }

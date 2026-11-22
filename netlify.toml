@@ -5,7 +5,7 @@
   publish = "."
   command = ""
 
-# Clean URLs (/services/window-cleaning/ instead of .../index.html)
+# Clean URLs (/services/window-cleaning-champaign-county/ instead of .../index.html)
 [build.processing]
   skip_processing = false
 
@@ -37,6 +37,80 @@
 #   to = "https://www.allimprovementcleaning.com/:splat"
 #   status = 301
 #   force = true
+
+# Service pages moved to Champaign County URLs (Nov 2026). Permanent redirects
+# keep old links, bookmarks and Google's index pointing at the new pages.
+[[redirects]]
+  from = "/services/commercial-cleaning"
+  to = "/services/commercial-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/commercial-cleaning/*"
+  to = "/services/commercial-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/home-cleaning"
+  to = "/services/home-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/home-cleaning/*"
+  to = "/services/home-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/floor-cleaning-and-waxing"
+  to = "/services/floor-cleaning-and-waxing-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/floor-cleaning-and-waxing/*"
+  to = "/services/floor-cleaning-and-waxing-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/window-cleaning"
+  to = "/services/window-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/window-cleaning/*"
+  to = "/services/window-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/move-out-cleaning"
+  to = "/services/move-out-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/move-out-cleaning/*"
+  to = "/services/move-out-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/construction-cleaning"
+  to = "/services/construction-cleaning-champaign-county/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/construction-cleaning/*"
+  to = "/services/construction-cleaning-champaign-county/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/*"
