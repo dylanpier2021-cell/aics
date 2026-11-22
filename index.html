@@ -54,6 +54,9 @@
     /* No standalone gold lines on the homepage: above the steps or across the top of the footer */
     .step { border-top: 0; padding-top: 0; }
     .site-footer { border-top: 0; }
+    /* Checklist section: no background photo, so a plain band with less padding */
+    .breaker { padding-block: clamp(80px, 11vw, 140px); background: var(--bg-elevated); }
+    .breaker::after { content: none; }
   </style>
   <!-- Reveal-animation safety net. Marks the page as JS-capable so the CSS may
        hide reveal elements, then un-hides everything if main.js has not taken
@@ -493,7 +496,6 @@
 
     <!-- ============================= IMAGE BREAKER ============================= -->
     <section class="breaker">
-      <div class="breaker__bg" style="background-image:url('/assets/img/site/breaker-2.jpg');" role="img" aria-label="A storefront cleaned and lit at night"></div>
       <div class="container">
         <div class="breaker__inner reveal">
           <h2>Our Checklist-Based Cleaning Process</h2>
